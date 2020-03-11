@@ -1,0 +1,192 @@
+
+Showing logs for build [32mjenkins-x-versions-bot-test-env-d4l5r-1[0m stage [32mrelease[0m and container [32mstep-credential-initializer-9v2z9[0m
+{"level":"warn","ts":1583929437.7239935,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1583929437.7243948,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mjenkins-x-versions-bot-test-env-d4l5r-1[0m stage [32mrelease[0m and container [32mstep-working-dir-initializer-j68lc[0m
+{"level":"warn","ts":1583929439.0273447,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1583929439.028281,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mjenkins-x-versions-bot-test-env-d4l5r-1[0m stage [32mrelease[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mjenkins-x-versions-bot-test-env-d4l5r-1[0m stage [32mrelease[0m and container [32mstep-git-source-jenkins-x-versions-bot-test-env-d4l5r-qrgkz[0m
+{"level":"warn","ts":1583929446.1067915,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1583929447.0917802,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/***************************/environment-pr-870-3-bdd-boot-helm3-staging.git @ v0.0.1 in path /workspace/source"}
+
+Showing logs for build [32mjenkins-x-versions-bot-test-env-d4l5r-1[0m stage [32mrelease[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:7e9717c152a34d44472bcefcdc326bb13caa51e0
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mjenkins-x-versions-bot-test-env-d4l5r-1[0m stage [32mrelease[0m and container [32mstep-validate-git[0m
+Git configured for user: jenkins-x-bot and email jenkins-x@googlegroups.com
+
+Showing logs for build [32mjenkins-x-versions-bot-test-env-d4l5r-1[0m stage [32mrelease[0m and container [32mstep-verify-preinstall[0m
+disabling ** step verify preinstall as using a local environment
+
+Showing logs for build [32mjenkins-x-versions-bot-test-env-d4l5r-1[0m stage [32mrelease[0m and container [32mstep-install-jx-crds[0m
+Jenkins X CRDs upgraded with success
+
+Showing logs for build [32mjenkins-x-versions-bot-test-env-d4l5r-1[0m stage [32mrelease[0m and container [32mstep-generate-helmfile[0m
+
+Showing logs for build [32mjenkins-x-versions-bot-test-env-d4l5r-1[0m stage [32mrelease[0m and container [32mstep-helmfile-system[0m
+Adding repo dev http://chartmuseum-**.35.205.90.209.nip.io
+"dev" has been added to your repositories
+
+Adding repo jenkins-x https://storage.googleapis.com/chartmuseum.jenkins-x.io
+"jenkins-x" has been added to your repositories
+
+Adding repo zloeber git+https://github.com/rawlingsj/helm-namespace@chart
+"zloeber" has been added to your repositories
+
+Updating repo
+Hang tight while we grab the latest from your chart repositories...
+...Successfully got an update from the "dev" chart repository
+...Successfully got an update from the "zloeber" chart repository
+...Successfully got an update from the "jenkins-x" chart repository
+Update Complete. ⎈ Happy Helming!⎈ 
+
+Affected releases are:
+  empty (jenkins-x/empty) UPDATED
+  namespace-**-staging (zloeber/namespace) UPDATED
+
+Upgrading release=namespace-**-staging, chart=zloeber/namespace
+Release "namespace-**-staging" does not exist. Installing it now.
+NAME: namespace-**-staging
+LAST DEPLOYED: Wed Mar 11 12:24:30 2020
+NAMESPACE: **
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+
+Listing releases matching ^namespace-**-staging$
+namespace-**-staging	**       	1       	2020-03-11 12:24:30.554044461 +0000 UTC	deployed	namespace-0.1.0	0.1.0      
+
+Upgrading release=empty, chart=jenkins-x/empty
+Release "empty" does not exist. Installing it now.
+NAME: empty
+LAST DEPLOYED: Wed Mar 11 12:24:35 2020
+NAMESPACE: **-staging
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+
+Listing releases matching ^empty$
+empty	**-staging	1       	2020-03-11 12:24:35.734035857 +0000 UTC	deployed	empty-0.0.3	           
+
+
+UPDATED RELEASES:
+NAME                   CHART               VERSION
+namespace-**-staging   zloeber/namespace     0.1.0
+empty                  jenkins-x/empty       0.0.3
+
+
+Showing logs for build [32mjenkins-x-versions-bot-test-env-d4l5r-1[0m stage [32mrelease[0m and container [32mstep-verify-ingress[0m
+Waiting to find the external host name of the ingress controller Service in namespace nginx with name nginx-ingress-controller
+No domain flag provided so using default 35.205.90.209.nip.io to generate Ingress rules
+defaulting the domain to 35.205.90.209.nip.io and modified /workspace/source/**-requirements.yml
+
+Showing logs for build [32mjenkins-x-versions-bot-test-env-d4l5r-1[0m stage [32mrelease[0m and container [32mstep-helmfile-apps[0m
+Adding repo dev http://chartmuseum-**.35.205.90.209.nip.io
+"dev" has been added to your repositories
+
+Adding repo jenkins-x http://chartmuseum.jenkins-x.io
+"jenkins-x" has been added to your repositories
+
+Adding repo zloeber git+https://github.com/rawlingsj/helm-namespace@chart
+"zloeber" has been added to your repositories
+
+Updating repo
+Hang tight while we grab the latest from your chart repositories...
+...Successfully got an update from the "dev" chart repository
+...Successfully got an update from the "zloeber" chart repository
+...Successfully got an update from the "jenkins-x" chart repository
+Update Complete. ⎈ Happy Helming!⎈ 
+
+Affected releases are:
+  bdd-gh-1583929081 (dev/bdd-gh-1583929081) UPDATED
+  namespace-**-staging (zloeber/namespace) UPDATED
+
+Upgrading release=namespace-**-staging, chart=zloeber/namespace
+Release "namespace-**-staging" has been upgraded. Happy Helming!
+NAME: namespace-**-staging
+LAST DEPLOYED: Wed Mar 11 12:24:44 2020
+NAMESPACE: **
+STATUS: deployed
+REVISION: 2
+TEST SUITE: None
+
+Listing releases matching ^namespace-**-staging$
+namespace-**-staging	**       	2       	2020-03-11 12:24:44.970159065 +0000 UTC	deployed	namespace-0.1.0	0.1.0      
+
+Upgrading release=bdd-gh-1583929081, chart=dev/bdd-gh-1583929081
+Release "bdd-gh-1583929081" does not exist. Installing it now.
+NAME: bdd-gh-1583929081
+LAST DEPLOYED: Wed Mar 11 12:24:47 2020
+NAMESPACE: **-staging
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+NOTES:
+Get the application URL by running these commands:
+
+kubectl get ingress bdd-gh-1583929081-bdd-gh-1583929081
+
+Listing releases matching ^bdd-gh-1583929081$
+bdd-gh-1583929081	**-staging	1       	2020-03-11 12:24:47.567884903 +0000 UTC	deployed	bdd-gh-1583929081-0.0.1	0.0.1      
+
+
+UPDATED RELEASES:
+NAME                   CHART                   VERSION
+namespace-**-staging   zloeber/namespace         0.1.0
+bdd-gh-1583929081      dev/bdd-gh-1583929081     0.0.1
+
+
+Showing logs for build [32mjenkins-x-versions-bot-test-env-d4l5r-1[0m stage [32mrelease[0m and container [32mstep-git-creds[0m
+Generated Git credentials file /builder/home/git/credentials
+
+Showing logs for build [32mjenkins-x-versions-bot-test-env-d4l5r-1[0m stage [32mrelease[0m and container [32mstep-verify-jenkins-x-environment[0m
+disabling ** step verify env as using a local environment
+
+Showing logs for build [32mjenkins-x-versions-bot-test-env-d4l5r-1[0m stage [32mrelease[0m and container [32mstep-install-pipelines[0m
+
+Showing logs for build [32mjenkins-x-versions-bot-test-env-d4l5r-1[0m stage [32mrelease[0m and container [32mstep-update-webhooks[0m
+DEBUG: Finding service url for hook in namespace **
+DEBUG: Couldn't find service url, attempting to look up via ingress
+DEBUG: found service url http://hook-**.35.205.90.209.nip.io
+Updating webhooks for Owner: *************************** and Repository: bdd-gh-1583929081 in git server: https://github.com
+Checking hooks for repository ***************************/bdd-gh-1583929081 with user ***************************
+Found matching hook for url http://hook-**.35.205.90.209.nip.io/hook
+Updating GitHub webhook for ***************************/bdd-gh-1583929081 for url http://hook-**.35.205.90.209.nip.io/hook
+Updating webhooks for Owner: *************************** and Repository: environment-pr-870-3-bdd-boot-helm3-dev in git server: https://github.com
+Checking hooks for repository ***************************/environment-pr-870-3-bdd-boot-helm3-dev with user ***************************
+Found matching hook for url http://hook-**.35.205.90.209.nip.io/hook
+Updating GitHub webhook for ***************************/environment-pr-870-3-bdd-boot-helm3-dev for url http://hook-**.35.205.90.209.nip.io/hook
+Updating webhooks for Owner: *************************** and Repository: environment-pr-870-3-bdd-boot-helm3-production in git server: https://github.com
+Checking hooks for repository ***************************/environment-pr-870-3-bdd-boot-helm3-production with user ***************************
+Found matching hook for url http://hook-**.35.205.90.209.nip.io/hook
+Updating GitHub webhook for ***************************/environment-pr-870-3-bdd-boot-helm3-production for url http://hook-**.35.205.90.209.nip.io/hook
+Updating webhooks for Owner: *************************** and Repository: environment-pr-870-3-bdd-boot-helm3-staging in git server: https://github.com
+Checking hooks for repository ***************************/environment-pr-870-3-bdd-boot-helm3-staging with user ***************************
+Found matching hook for url http://hook-**.35.205.90.209.nip.io/hook
+Updating GitHub webhook for ***************************/environment-pr-870-3-bdd-boot-helm3-staging for url http://hook-**.35.205.90.209.nip.io/hook
+
+Showing logs for build [32mjenkins-x-versions-bot-test-env-d4l5r-1[0m stage [32mrelease[0m and container [32mstep-verify-installation[0m
+verifying the Jenkins X installation in namespace **
+verifying pods
+Checking pod statuses
+POD                                                        STATUS
+jenkins-x-chartmuseum-7844b7b6cb-rpfbw                     Running
+**-boot-c6dvn                                              Succeeded
+**boot-helmfile-resources-controllerbuild-65d8958d66-tt4p5 Running
+**boot-helmfile-resources-controllerrole-7d85d784c5-bpj66  Running
+lighthouse-lighthouse-587669568d-lfbp5                     Running
+lighthouse-lighthouse-587669568d-xw9cs                     Running
+nexus-nexus-5f77cf7b86-gt9jh                               Running
+tekton-pipelines-controller-666488cbd5-4vxqj               Running
+tide-78fc6df7c-w8f7n                                       Running
+Verifying the git config
+Verifying username *************************** at git server github at https://github.com
+Found 1 organisations in git server https://github.com: cb-kubecd
+Validated pipeline user *************************** on git server https://github.com
+Git tokens seem to be setup correctly
+Installation is currently looking: GOOD
